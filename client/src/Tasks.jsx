@@ -56,7 +56,7 @@ const Tasks = () => {
   //Show all tasks
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/v1/tasks")
+      .get("https://to-do-app-1p9h.onrender.com/api/v1/tasks")
       .then((res) => {
         console.log(res.data);
         setData(res.data); // sets the data to the useState
@@ -66,13 +66,13 @@ const Tasks = () => {
   const deleteTask = (id, e) => {
     //e.preventDefault() pang prevent para hindi mangyare yung event pag hindi kailangan
     axios
-      .delete(`http://localhost:5000/api/v1/tasks/${id}`)
+      .delete(`https://to-do-app-1p9h.onrender.com/api/v1/tasks/${id}`)
       .catch((error) => console.log(error));
     window.location.reload(false)
   };
   const deleteAll = () =>{
     axios
-      .delete(`http://localhost:5000/api/v1/tasks`)
+      .delete(`https://to-do-app-1p9h.onrender.com/api/v1/tasks`)
       .catch((error) => console.log(error));
     window.location.reload(false)
   }
@@ -80,7 +80,7 @@ const Tasks = () => {
     //e.preventDefault() pang prevent para hindi mangyare yung event pag hindi kailangan
     //alert(data._id)
     axios
-      .patch(`http://localhost:5000/api/v1/tasks/${data}`, {
+      .patch(`https://to-do-app-1p9h.onrender.com/api/v1/tasks/${data}`, {
         completed: true,
       })
       .catch((error) => console.log(error));

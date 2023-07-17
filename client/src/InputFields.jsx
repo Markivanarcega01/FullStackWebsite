@@ -8,7 +8,7 @@ const InputField = () => {
   const postData = (e) =>{
     //alert('Button clicked')
     e.preventDefault();
-    axios.post("http://localhost:5000/api/v1/tasks",{
+    axios.post("https://to-do-app-1p9h.onrender.com/api/v1/tasks",{
       name:data
     })
     setData('')
@@ -17,7 +17,7 @@ const InputField = () => {
   return (
     <>
       <div className="flex">
-        <form className="border m-1 flex-initial">
+        <form className="border m-1">
           <input
             type="text"
             value={data}
@@ -26,7 +26,7 @@ const InputField = () => {
             className="p-1"
           />
         </form>
-        <button type="submit" onClick={postData} className="bg-violet-500 px-2.5 my-1 rounded flex-non">
+        <button type="submit" onClick={postData} className="bg-violet-500 px-2.5 my-1 rounded">
           <FontAwesomeIcon icon={faPlus} className="text-white" />
         </button>
       </div>
