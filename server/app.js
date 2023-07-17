@@ -9,9 +9,7 @@ const notFound = require('./middleware/not-found')
 const errorHandler = require('./middleware/error-handler')
 const port = 5000
 
-app.use(cors({
-    origin:'https://64b583f1b07d20358167ee53--iridescent-empanada-e452c7.netlify.app'
-}))
+app.use(cors())
 app.use(express.json()) // This is use when the front end throws a json data
 app.use('/api/v1/tasks',tasks)
 app.use(notFound)
