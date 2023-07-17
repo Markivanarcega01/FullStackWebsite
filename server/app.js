@@ -10,7 +10,7 @@ const errorHandler = require('./middleware/error-handler')
 const port = 5000
 
 app.use(cors({
-    origin:'http://localhost:5173'
+    origin:'https://64b583f1b07d20358167ee53--iridescent-empanada-e452c7.netlify.app'
 }))
 app.use(express.json()) // This is use when the front end throws a json data
 app.use('/api/v1/tasks',tasks)
