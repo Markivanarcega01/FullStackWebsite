@@ -54,8 +54,8 @@ const Tasks = () => {
   //   </div>
   // );
   //Show all tasks
-  useEffect(() => {
-    axios
+  useEffect(async() => {
+    await axios
       .get("https://to-do-app-1p9h.onrender.com/api/v1/tasks")
       .then((res) => {
         console.log(res.data);
@@ -63,25 +63,25 @@ const Tasks = () => {
       })
       .catch((err) => console.log(err));
   }, []);
-  const deleteTask = (id, e) => {
+  const deleteTask = async(id, e) => {
     //e.preventDefault() pang prevent para hindi mangyare yung event pag hindi kailangan
-    axios
+    await axios
       .delete(`https://to-do-app-1p9h.onrender.com/api/v1/tasks/${id}`)
       .catch((error) => console.log(error));
     alert('Data deleted')
     window.location.reload(false)
   };
-  const deleteAll = () =>{
-    axios
+  const deleteAll = async() =>{
+    await axios
       .delete(`https://to-do-app-1p9h.onrender.com/api/v1/tasks`)
       .catch((error) => console.log(error));
       alert('All data deleted')
     window.location.reload(false)
   }
-  const taskCompleted = (data) => {
+  const taskCompleted = async(data) => {
     //e.preventDefault() pang prevent para hindi mangyare yung event pag hindi kailangan
     //alert(data._id)
-    axios
+    await axios
       .patch(`https://to-do-app-1p9h.onrender.com/api/v1/tasks/${data}`, {
         completed: true,
       })

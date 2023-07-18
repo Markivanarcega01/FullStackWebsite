@@ -5,14 +5,13 @@ import { useState,useEffect } from "react";
 
 const InputField = () => {
   const [data,setData] = useState('')
-  const postData = (e) =>{
+  const postData = async(e) =>{
     //alert('Button clicked')
     e.preventDefault();
-    axios.post("https://to-do-app-1p9h.onrender.com/api/v1/tasks",{
+    await axios.post("https://to-do-app-1p9h.onrender.com/api/v1/tasks",{
       name:data
     })
     setData('')
-    alert('Data added')
     window.location.reload(false)
   }
   return (
