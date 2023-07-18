@@ -68,14 +68,12 @@ const Tasks = () => {
     await axios
       .delete(`https://to-do-app-1p9h.onrender.com/api/v1/tasks/${id}`)
       .catch((error) => console.log(error));
-    alert('Data deleted')
     window.location.reload(false)
   };
   const deleteAll = async() =>{
     await axios
       .delete(`https://to-do-app-1p9h.onrender.com/api/v1/tasks`)
       .catch((error) => console.log(error));
-      alert('All data deleted')
     window.location.reload(false)
   }
   const taskCompleted = async(data) => {
@@ -86,7 +84,6 @@ const Tasks = () => {
         completed: true,
       })
       .catch((error) => console.log(error));
-      alert('Task Done')
       window.location.reload(false);
   };
   const allTasks = data.map((data) => {
