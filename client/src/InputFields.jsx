@@ -12,6 +12,7 @@ const InputField = () => {
       name:data
     })
     setData('')
+    alert('Data added')
     window.location.reload(false)
   }
   return (
