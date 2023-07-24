@@ -8,6 +8,7 @@ const getAllTasks =async(req,res)=>{
 
 const createTask = async(req,res)=>{
     const task = await Task.create(req.body)
+    //create a validator that checks if the tasks already exists
     res.status(200).json(task)
 }
 const getTask = async(req,res) =>{
